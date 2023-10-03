@@ -114,6 +114,16 @@ public class GameManager : MonoBehaviour
     {
         if(numberOfPlayers >= 10) return;
 
+        //Check if name already exists
+        foreach(string name in names)
+        {
+            if(name == currentName)
+            {
+                Debug.Log("Name already exists");
+                return;
+            }
+        }
+
         HideInputNamePanel();
         numberOfPlayers++;
         numberOfPlayersText.text = numberOfPlayers.ToString() + " Player(s)";
